@@ -1,6 +1,7 @@
 # `@ds-pack/theme-to-css-vars`
 
-_Note: looking for a better package name, if you have ideas see #1_
+_Note: looking for a better package name, if you have ideas see
+[#1](https://github.com/ds-pack/theme-to-css-vars/issues/1)_
 
 A utility package for transforming a css-in-js theme object from raw values to
 CSS custom properties (CSS variables).
