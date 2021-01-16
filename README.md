@@ -17,7 +17,6 @@ yarn add @ds-pack/theme-to-css-vars
 ```tsx
 import themeToCSSVars from '@ds-pack/theme-to-css-vars'
 
-let cssVars = {}
 let baseTheme = {
   colors: {
     blue: ['cadetblue', 'steelblue', 'cornflowerblue'],
@@ -27,34 +26,18 @@ let baseTheme = {
   },
 }
 
-let theme = themeToCSSVars(baseTheme, cssVars)
+let cssVariables = themeToCSSVars(baseTheme)
 
-// theme ===
-//   {
-//     colors: {
-//       blue: [
-//         'var(--colors-blue-0, cadetblue)',
-//         'var(--colors-blue-1, steelblue)',
-//         'var(--colors-blue-2, cornflowerblue)',
-//       ],
-//     },
-//   }
-
-// cssVars ===
-//   {
-//     colors: {
-//       blue: {
-//         '--colors-blue-0': 'cadetblue',
-//         '--colors-blue-1': 'steelblue',
-//         '--colors-blue-2': 'cornflowerblue',
-//       },
-//     },
-//   }
+// cssVariables ===
+//   [
+//     ['--colors-blue-0', 'cadetblue' ],
+//     ['--colors-blue-1', 'steelblue' ],
+//     ['--colors-blue-2', 'cornflowerblue' ],
+//   ]
 ```
 
-The utility function will return a new theme object that you can pass to your
-`ThemeProvider` if you want to, additionally the function will mutate the
-`cssVars` (second argument) to setup the css custom property mapping.
+The utility function will return an array of tuples representing the CSS
+Variables for the theme.
 
 ### Tools:
 
